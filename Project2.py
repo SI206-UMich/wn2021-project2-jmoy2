@@ -94,7 +94,7 @@ def summarize_best_books(filepath):
     to your list of tuples.
     """
     best_books = []
-    with open(os.path.join(filepath, "best_books.htm")) as fp:
+    with open(os.path.join(filepath, "best_books_2020.htm")) as fp:
         soup = BeautifulSoup(fp, 'html.parser')
         data = soup.find_all('div', class_= 'category clearFix')
         for item in data:
@@ -106,7 +106,6 @@ def summarize_best_books(filepath):
             url = item.find("a").get("href")
             tup = (category, title3, url)
             best_books.append(tup)
-    print(best_books)
     return best_books
 
 
